@@ -1,5 +1,4 @@
 // API Key - Weather Update
-var weatherUpdate = "2a4c2ee2b6787cbd83f362f34c0a9184";
 var city;
 var btnSearch = document.querySelector("#search")
 var searchCity = document.querySelector("#city-search")
@@ -10,8 +9,10 @@ var humid = document.querySelector("#humidity")
 var wind = document.querySelector("#windspeed")
 var ultVio = document.querySelector("#uv")
 
-btnSearch.addEventListener("click",function() {
-    console.log (searchCity.value)
+
+btnSearch.addEventListener("click", function () {
+    weatherUpdate()
+    console.log(searchCity.value)
 })
 // Here is my local storage
 //function liCity(){
@@ -27,7 +28,7 @@ btnSearch.addEventListener("click",function() {
 
 //calling my API
 function weatherUpdate() {
- var requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid={API key}appid={2a4c2ee2b6787cbd83f362f34c0a9184};"
+    var requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchCity.value + "&appid=2a4c2ee2b6787cbd83f362f34c0a9184"
 
 fetch(requestUrl)
     .then(function (response) {
