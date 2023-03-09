@@ -27,7 +27,7 @@ btnSearch.addEventListener("click",function() {
 
 //calling my API
 function weatherUpdate() {
- var requestUrl = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={2a4c2ee2b6787cbd83f362f34c0a9184}"
+ var requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid={API key}appid={2a4c2ee2b6787cbd83f362f34c0a9184};"
 
 fetch(requestUrl)
     .then(function (response) {
